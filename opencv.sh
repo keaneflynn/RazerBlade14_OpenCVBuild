@@ -1,6 +1,7 @@
 sudo apt update
 sudo apt upgrade
 
+sudo apt install -y gcc-10 g++-10
 sudo apt install -y build-essential cmake pkg-config yasm git checkinstall
 sudo apt install -y libjpeg-dev libpng-dev libtiff-dev
 sudo apt install -y libavcodec-dev libavformat-dev libswscale-dev 
