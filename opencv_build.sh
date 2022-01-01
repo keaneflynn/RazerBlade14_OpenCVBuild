@@ -36,6 +36,6 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 	
 echo "Configuring build & making OpenCV"
 
-make -j12
+make -j$(nproc)
 sudo make install
 
