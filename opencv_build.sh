@@ -12,13 +12,13 @@ sudo apt install -y libfaac-dev libmp3lame-dev libvorbis-dev
 sudo apt-get install -y libavresample-dev libdc1394-22 libdc1394-22-dev libxine2-dev libv4l-dev v4l-utils
 
 mkdir opencv_build && cd opencv_build
-wget -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/4.5.3.zip
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.3.zip
+wget -O opencv.zip https://github.com/opencv/opencv/archive/refs/tags/4.5.5.zip
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.5.zip
 unzip opencv.zip
 unzip opencv_contrib.zip
 
 echo "Moving onto the build portion of things"
-cd opencv-4.5.3
+cd opencv-4.5.5
 mkdir build && cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 	-D CMAKE_C_COMPILER=/usr/bin/gcc-10 \
@@ -34,10 +34,11 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 	-D OPENCV_ENABLE_NONFREE=ON \
 	-D WTIH_CUBLAS=1 \
 	-D WITH_V4L=ON \
-	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib-4.5.3/modules ..
+	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib-4.5.5/modules ..
 	
 echo "Configuring build & making OpenCV"
 
-make -j$(nproc)
+make -j12
 sudo make install
-
+sudo cp -r /usr/local/lib/python3.9/site-packages/cv2/ /home/keane/.local/lib/python3.9/site-packages/ #For anyone else using this, change you paths accordingly
+echo 'finished all the shit'
