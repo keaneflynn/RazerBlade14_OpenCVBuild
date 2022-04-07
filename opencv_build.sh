@@ -40,5 +40,5 @@ echo "Configuring build & making OpenCV"
 
 make -j12
 sudo make install
-sudo cp -r /usr/local/lib/python3.9/site-packages/cv2/ /home/keane/.local/lib/python3.9/site-packages/ #For anyone else using this, change you paths accordingly
+#sudo cp -r /usr/local/lib/python3.9/site-packages/cv2/ /home/keane/.local/lib/python3.9/site-packages/ #For anyone else using this, change you paths accordingly. If you are updating versions you might need to include tis line.
 echo 'finished all the shit'
