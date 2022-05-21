@@ -34,7 +34,7 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 	-D OPENCV_ENABLE_NONFREE=ON \
 	-D WTIH_CUBLAS=1 \
 	-D WITH_V4L=ON \
-	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_build/opencv_contrib-4.5.5/modules ..
+	-D OPENCV_EXTRA_MODULES_PATH=~/RazerBlade14_OpenCVBuild/opencv_build/opencv_contrib-4.5.5/modules ..
 	
 echo "Configuring build & making OpenCV"
 
